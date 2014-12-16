@@ -58,7 +58,8 @@ RUN apt-get update && \
 ```
     
 * Group all similar commands into as few distinct blocks as possible to save on
-layer sizes. (Each layer will have to be downloaded on each demo launch.)
+layer sizes. (Each layer will have to be downloaded on each demo launch thus
+taking more time.)
 * Always `rm -rf /var/lib/apt/lists/*` if you've done an `apt-get update` to
 save on layer size.
 
