@@ -1,0 +1,19 @@
+Host demos-web-gui
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/demos-web-gui.key
+
+Host datastax-dockerfiles
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/datastax-dockerfiles.key
+
+Host coffice
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/coffice.key
+
+Host bdp
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/bdp.key

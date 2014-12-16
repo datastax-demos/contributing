@@ -1,0 +1,44 @@
+#!/bin/sh
+
+rm /usr/local/bin/start-dse
+
+# grab local IP address and grab seedlist, if applicable
+HOST=$(hostname -i)
+ARG2="$1"
+IP_LIST=${ARG2:-${HOST}}
+IP=`echo $IP_LIST | cut -d',' -f1`
+
+export COFFICE_WEBSERVER=localhost
+
+cd /root/coffice
+
+# point the application at Cassandra
+sed -i -e "s|localhost|${IP_LIST}|g" routes/restapi.js
+
+# wait for Cassandra's native transport to start
+while :
+do
+    echo "SELECT bootstrapped FROM system.local;" | cqlsh ${IP} && break
+	sleep 1
+done
+
+cqlsh -f schema.cql ${IP}
+
+# load logistics data
+echo "COPY coffice.userinfo (user_id, datastax_employee, latlon, solr_query, user_bio, user_email, user_name, user_other, user_phone, user_skills) FROM 'sample_data/coffice.userinfo.csv';" | cqlsh ${IP}
+echo "COPY coffice.user_last (user_id, area_code, city, continent_name, country_name, ip_address, latitude, latlon, longitude, metro_code, organization, postal_code, region_name, user_ts) FROM 'sample_data/coffice.user_last.csv';" | cqlsh ${IP}
+echo "COPY coffice.user_loc_hist (user_id, user_ts, latitude, latlon, longitude) FROM 'sample_data/coffice.user_loc_hist.csv';" | cqlsh ${IP}
+echo "COPY coffice.user_hist (user_id, user_ts, ip_address, area_code, city, continent_name, country_name, latitude, latlon, longitude, metro_code, organization, postal_code, region_name) FROM 'sample_data/coffice.user_hist.csv';" | cqlsh ${IP}
+
+# start the webapp
+sudo pm2 start app.js -i max
+
+# start the sample data loading
+cd /root
+nohup python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
+nohup python coffice/scripts/sensor_data/load_smart_data.py > /root/load_smart_data.out 2>&1 &
+nohup python coffice/scripts/sensor_data/fake_devicefinder.py > /root/fake_devicefinder.out 2>&1 &
+
+# keep this script running for docker
+echo "Stay alive..."
+while :; do sleep 1; done
