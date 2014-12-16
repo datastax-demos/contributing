@@ -36,19 +36,17 @@ All other OS guides can be found [here](http://docs.docker.com/installation/).
 
 ### Dockerfile
 
-An overview of the Dockerfile will follow.
-
 ```ruby
 FROM       datastaxdemos/datastax-enterprise:stable
 MAINTAINER Joaquin Casares <joaquin@datastax.com>
 ```
 
-* Ensure you set, at the very least, the maintainer information in case there
-are any issues on our end with your script.
-* The FROM variable in this case is a parent of the 
+* The FROM variable in this case shows this images is a child of the
 `datastaxdemos/datastax-enterprise:stable` private image. A good alternative
 would be `ubuntu:trusty`. Other images can be found
 [here](https://registry.hub.docker.com/).
+* Ensure you also set the MAINTAINER variable in case there are any issues
+on our end with your script.
 
 ```ruby
 RUN apt-get update && \
