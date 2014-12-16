@@ -7,17 +7,17 @@ Github repository "deploy key".
 
 This guide is intended for users who have no familiarity with Docker.
 
-### Setup
+## Setup
 
 You'll need [Docker](http://docker.com).
 
-#### Ubuntu
+### Ubuntu
 
 ```bash
 curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 ```
     
-#### OS X
+### OS X
 
 You can install Docker using [Homebrew](http://brew.sh/)
     
@@ -27,14 +27,14 @@ brew update; brew install docker boot2docker docker-completion
     
 or use the [official documentation](https://docs.docker.com/installation/mac/).
 
-#### Other OS
+### Other OS
 
 All other OS guides can be found [here](http://docs.docker.com/installation/).
 
 
-### Key Files
+## Key Files
 
-#### Dockerfile
+### Dockerfile
 
 An overview of the Dockerfile will follow.
 
@@ -99,7 +99,7 @@ EXPOSE 3000
 * Because we use `--net host` this is a moot command, but good to know for our
 backend infrastructure.
 
-#### bin/start-coffice
+### bin/start-coffice
 
 ```bash
 # grab local IP address and grab seedlist, if applicable
