@@ -158,8 +158,10 @@ docker run -d --net host ouruser/demo:v1 ${IP_LIST}
 
 * `ubuntu:trusty` can be substituted for the
 [image](https://registry.hub.docker.com/) used by the Dockerfile.
+
 * `ouruser/demo:v1` will be the `<organization>/<name>:<version>` of the build.
 * The trailing `.` is used to signify the current path to the Dockerfile.
+
 * `-d` will enable daemon mode and run the container in the background.
 * `--net hose` will use the host network stack inside the container.
 * `${IP_LIST}` will be the comma-delimited list of DataStax Enterprise nodes
