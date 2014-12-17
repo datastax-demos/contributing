@@ -25,7 +25,14 @@ This guide is intended for users who have no familiarity with Docker.
 ## Setup
 
 [Docker](http://docker.com) containers are required for the DataStax Demo Portal
-to integrate additional demos. Install Docker to get started.
+to integrate additional demos. Containers provide "an operating system–level
+virtualization method for running multiple isolated Linux systems (containers)
+on a single control host. The Linux kernel comprises cgroups for resource
+isolation (CPU, memory, block I/O, network, etc.) that does not require
+starting any virtual machines." [Wikipedia](http://en.wikipedia.org/wiki/LXC)
+Find out more [here](https://www.docker.com/whatisdocker/).
+
+Install Docker to get started.
 
 ### Ubuntu
 
