@@ -186,3 +186,24 @@ docker rm -f <container_id>
 ```
 
 * Will kill an active container and remove it from the host system.
+
+## Submitting New Demos
+
+* Send an email to `demos@datastax.com` with either of the following options
+(in order of preference):
+    * a link to a public Github repository
+    * a link to a (private or public) [gist](https://gist.github.com/)
+    * a link to a private Github repository
+        * add permissions for `joaquincasares` and `tupshin` to access the
+        repository
+    * a link to a [hub.docker.com](http://hub.docker.com) repository
+        * add permissions for `joaquincasares` and `datastaxdemosuser` to access
+        the repository
+    * a tarball
+* Code repositories preferred due to the added benefits of:
+    * streamlined upgrades
+    * simplified code management
+    * point-in-time recovery
+* Feel free to send us a [hub.docker.com](http://hub.docker.com) repository,
+but do be aware any changes made on this image will be immediately available on
+our live system.
