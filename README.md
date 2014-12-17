@@ -1,15 +1,31 @@
 ## Guide for Contributing to the DataStax Demo Portal
 
-Included in this repository is the shell of an active DataStax Demo Portal demo.
+By contributing demos to the DataStax Demo Portal, you are allowing multiple
+teams within DataStax (pre-sales, post-sales, training, marketing, ...) and
+external to DataStax (partners, vendors, customers, ...) to be
+able to quickly and easily deploy DataStax Enterprise clusters that are being
+utilized by your application. These applications will in turn be showcased in
+front of potential clients, current customers, students, and conferences.
 
-The only missing file is `connected-office/src/coffice.key`, which is a two-way
-Github repository "deploy key".
+For internal teams, we will ideally be showcasing the overall power
+of DataStax Enterprise while highlighting individual features or market
+verticals.
+
+For partner teams, we will ideally be showcasing how your application
+integrates with DataStax Enterprise in distinct scenarios.
+
+Included in this repository is the shell of an active DataStax Demo Portal
+Docker container for tutorial purposes. The container is, however, missing a
+single file that blocks the container from
+running locally. `connected-office/src/coffice.key` was removed for security
+reasons.
 
 This guide is intended for users who have no familiarity with Docker.
 
 ## Setup
 
-[Docker](http://docker.com) is required.
+[Docker](http://docker.com) containers are required for the DataStax Demo Portal
+to integrate additional demos. Install Docker to get started.
 
 ### Ubuntu
 
