@@ -191,9 +191,9 @@ docker rm -f <container_id>
 
 * Send an email to `demos@datastax.com` with either of the following options
 (in order of preference):
-    * a link to a public Github repository
+    * a link to a public [Github](http://github.com) repository
     * a link to a (private or public) [gist](https://gist.github.com/)
-    * a link to a private Github repository
+    * a link to a private [Github](http://github.com) repository
         * add permissions for `joaquincasares` and `tupshin` to access the
         repository
     * a link to a [hub.docker.com](http://hub.docker.com) repository
