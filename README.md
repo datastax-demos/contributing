@@ -152,15 +152,21 @@ Docker container will stop as soon as the script returns.
 
 ```bash
 docker pull ubuntu:trusty
-docker build -t="ouruser/demo:v1" .
-docker run -d --net host ouruser/demo:v1 ${IP_LIST}
 ```
 
 * `ubuntu:trusty` can be substituted for the
 [image](https://registry.hub.docker.com/) used by the Dockerfile.
 
+```bash
+docker build -t="ouruser/demo:v1" .
+```
+
 * `ouruser/demo:v1` will be the `<organization>/<name>:<version>` of the build.
 * The trailing `.` is used to signify the current path to the Dockerfile.
+
+```bash
+docker run -d --net host ouruser/demo:v1 ${IP_LIST}
+```
 
 * `-d` will enable daemon mode and run the container in the background.
 * `--net hose` will use the host network stack inside the container.
