@@ -1,15 +1,15 @@
 ## Guide for Contributing to the DataStax Demo Portal
 
 By contributing demos to the DataStax Demo Portal, you are allowing multiple
-teams within DataStax (pre-sales, post-sales, training, marketing) and
-external to DataStax (partners, vendors, customers) to be
+teams within DataStax (pre-sales, post-sales, training, marketing, community)
+and external to DataStax (partners, vendors, customers) to be
 able to quickly and easily deploy DataStax Enterprise clusters that are being
 utilized by your application. These applications will in turn be showcased in
 front of potential clients, current customers, students, and conferences.
 
 For internal teams, we will ideally be showcasing the overall power
-of DataStax Enterprise while highlighting individual features or market
-verticals.
+of DataStax Enterprise and Apache Cassandra while highlighting individual
+features or market verticals.
 
 For partner teams, we will ideally be showcasing how your application
 integrates with DataStax Enterprise in distinct scenarios.
