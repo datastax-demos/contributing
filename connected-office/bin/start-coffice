@@ -35,9 +35,9 @@ sudo pm2 start app.js -i max
 
 # start the sample data loading
 cd /root
-nohup python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
-nohup python coffice/scripts/sensor_data/load_smart_data.py > /root/load_smart_data.out 2>&1 &
-nohup python coffice/scripts/sensor_data/fake_devicefinder.py > /root/fake_devicefinder.out 2>&1 &
+python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
+python coffice/scripts/sensor_data/load_smart_data.py > /root/load_smart_data.out 2>&1 &
+python coffice/scripts/sensor_data/fake_devicefinder.py > /root/fake_devicefinder.out 2>&1 &
 
 # keep this script running for docker
 echo "Stay alive..."

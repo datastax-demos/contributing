@@ -122,7 +122,7 @@ do
 done
 ```
     
-* Use this loop, or similar loop to wait for the native transport to start.
+* Use this loop, or similar loop, to wait for the native transport to start.
 
 ```bash
 cqlsh -f schema.cql ${IP}
@@ -131,10 +131,10 @@ cqlsh -f schema.cql ${IP}
 * Use a similar command to load the schema from a file.
 
 ```bash
-nohup python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
+python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
 ```
 
-* Use `nohup $(command) &` to start a process that will run in the
+* Use `$(command) &` to start a process that will run in the
 background.
 * Redirect the stdout and stderr to a file using `> output.log 2>&1` for easier
 debugging.
