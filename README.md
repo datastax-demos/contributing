@@ -9,7 +9,7 @@ This guide is intended for users who have no familiarity with Docker.
 
 ## Setup
 
-You'll need [Docker](http://docker.com).
+[Docker](http://docker.com) is required.
 
 ### Ubuntu
 
@@ -19,7 +19,7 @@ curl -sSL https://get.docker.com/ubuntu/ | sudo sh
     
 ### OS X
 
-You can install Docker using [Homebrew](http://brew.sh/)
+Docker can be installed using [Homebrew](http://brew.sh/)
     
 ```bash
 brew update; brew install docker boot2docker docker-completion
@@ -45,8 +45,8 @@ MAINTAINER Joaquin Casares <joaquin@datastax.com>
 `datastaxdemos/datastax-enterprise:stable` private image. A good alternative
 would be `ubuntu:trusty`. Other images can be found
 [here](https://registry.hub.docker.com/).
-* Ensure you also set the MAINTAINER variable in case there are any issues
-on our end with your script.
+* Ensure the MAINTAINER variable is set in case there are any issues with the
+script.
 
 ```ruby
 RUN apt-get update && \
@@ -60,14 +60,14 @@ RUN apt-get update && \
 * Group all similar commands into as few distinct blocks as possible to save on
 layer sizes. (Each layer will have to be downloaded on each demo launch thus
 taking more time.)
-* Always `rm -rf /var/lib/apt/lists/*` if you've done an `apt-get update` to
+* Always `rm -rf /var/lib/apt/lists/*` if `apt-get update` has been run to
 save on layer size.
 
 ```ruby
 RUN mkdir -p /root/.ssh
 ```
 
-* All docker commands will happen as the root user, if this matters for your
+* All docker commands will happen as the root user, if this matters for the demo
 environment.
 
 ```ruby
@@ -128,7 +128,7 @@ done
 cqlsh -f schema.cql ${IP}
 ```
 
-* Use a similar command to load your schema from a file.
+* Use a similar command to load the schema from a file.
 
 ```bash
 nohup python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
@@ -136,7 +136,7 @@ nohup python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 
 
 * Use `nohup $(command) &` to start a process that will run in the
 background.
-* Redirect your stdout and stderr to a file using `> output.log 2>&1` for easier
+* Redirect the stdout and stderr to a file using `> output.log 2>&1` for easier
 debugging.
 
 ```bash
@@ -169,9 +169,9 @@ docker run -d --net host ouruser/demo:v1 ${IP_LIST}
 ```
 
 * `-d` will enable daemon mode and run the container in the background.
-* `--net hose` will use the host network stack inside the container.
+* `--net host` will use the host network stack inside the container.
 * `${IP_LIST}` will be the comma-delimited list of DataStax Enterprise nodes
-that will be passed to your `ENTRYPOINT`.
+that will be passed to the Dockerfile's `ENTRYPOINT`.
 
 ## Additional Docker Commands
 
@@ -185,4 +185,4 @@ docker ps
 docker rm -f <container_id>
 ```
 
-* Will kill an active container and remove it from your system.
+* Will kill an active container and remove it from the host system.
