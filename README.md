@@ -147,3 +147,33 @@ while :; do sleep 1; done
 
 * An infinite loop is required to keep the Docker container active. If not, the
 Docker container will stop as soon as the script returns.
+
+## Running a Docker Container
+
+```bash
+docker pull ubuntu:trusty
+docker build -t="ouruser/demo:v1" .
+docker run -d --net host ouruser/demo:v1 ${IP_LIST}
+```
+
+* `ubuntu:trusty` can be substituted for the
+[image](https://registry.hub.docker.com/) used by the Dockerfile.
+* `ouruser/demo:v1` will be the `<organization>/<name>:<version>` of the build.
+* `-d` will enable daemon mode and run the container in the background.
+* `--net hose` will use the host network stack inside the container.
+* `${IP_LIST}` will be the comma-delimited list of DataStax Enterprise nodes
+that will be passed to your `ENTRYPOINT`.
+
+## Additional Docker Commands
+
+```bash
+docker ps
+```
+
+* Will report all running containers and container ids.
+
+```bash
+docker rm -f <container_id>
+```
+
+* Will kill an active container and remove it from your system.
