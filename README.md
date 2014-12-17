@@ -205,5 +205,5 @@ docker rm -f <container_id>
     * simplified code management
     * point-in-time recovery
 * Feel free to send us a [hub.docker.com](http://hub.docker.com) repository,
-but do be aware any changes made on this image will be immediately available on
-our live system.
+but do be aware any changes made to this container will be immediately 
+available on our live system.
