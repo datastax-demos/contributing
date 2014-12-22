@@ -159,8 +159,8 @@ python coffice/scripts/sensor_data/load_snacks.py > /root/load_snacks.out 2>&1 &
 
 * Use `$(command) &` to start a process that will run in the
 background.
-* Redirect the stdout and stderr to a file using `> output.log 2>&1` for easier
-debugging.
+* Redirect the stdout and stderr to a file using `> application.out 2>&1` for
+easier debugging.
 
 ```bash
 # keep this script running for docker
@@ -170,6 +170,13 @@ while :; do sleep 1; done
 
 * An infinite loop is required to keep the Docker container active. If not, the
 Docker container will stop as soon as the script returns.
+
+### SCRIPT.md
+
+* A [Markdown](http://daringfireball.net/projects/markdown/syntax)-style
+document should be included with each Docker container.
+* An overview, intended audience, intended market verticals, and script should
+be provided.
 
 ## Running a Docker Container
 
