@@ -45,7 +45,9 @@ curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 Docker can be installed using [Homebrew](http://brew.sh/)
     
 ```bash
-brew update; brew install docker boot2docker docker-completion
+brew update
+brew tap homebrew/completions
+brew install docker boot2docker docker-completion
 ```
     
 or use the [official documentation](https://docs.docker.com/installation/mac/).
