@@ -223,7 +223,7 @@ docker exec -it ${ID} bash
 interaction.
 * The first line grabs the id from the command-line, assuming a single container
 is running. If not, assign this variable manually.
-* The second line uses `-it`, shorthand for `--interactive --tty` and starts
+* The second line uses `-it`, shorthand for `--interactive --tty`, and starts
 the `bash` command inside of the container referenced by `${ID}`.
 
 ```bash
