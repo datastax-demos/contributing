@@ -173,12 +173,29 @@ while :; do sleep 1; done
 * An infinite loop is required to keep the Docker container active. If not, the
 Docker container will stop as soon as the script returns.
 
-### SCRIPT.md
+### SCRIPT.*
 
-* A [Markdown](http://daringfireball.net/projects/markdown/syntax)-style
+* A [Github Markup](https://github.com/github/markup)
 document should be included with each Docker container.
+* Feel free to use any of the
+[supported markups](https://github.com/github/markup#markups)
+with matching file extensions.
 * An overview, intended audience, intended market verticals, and script should
 be provided.
+
+### PARTNER-SCRIPT.*
+
+* Required for partner demos, not DataStax demos.
+* A [Github Markup](https://github.com/github/markup)
+document should be included with each Docker container.
+* Feel free to use any of the
+[supported markups](https://github.com/github/markup#markups)
+with matching file extensions.
+* An overview, reason for DataStax Enterprise, intended audience,
+intended market verticals, and script should be provided.
+* This document should ideally mention why DataStax Enterprise is the ideal
+choice for this demo, but feel free to focus primarily on selling the partner
+application.
 
 ## Running a Docker Container
 
